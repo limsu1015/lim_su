@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="join.html">회원가입</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div id="title">
+     <h1>신규 등록 상품  
+        <input id="night_day" style="float: right;" type="button" value="night" onclick="
+      if( document.querySelector('#night_day').value=='night'){
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('#night_day').value='day';
+      }
+      else{
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+      document.querySelector('#night_day').value='night';
+    }
+      " >
+     </h1>
+    </div>
+    <div>
+     <select class="form" aria-label="select">
+        <option selected>카테고리</option>
+        <option value="1">상의</option>
+        <option value="2">하의</option>
+        <option value="3">신발</option>
+        <option value="4">잡화의류</option>   
+     </select>
+     <select class="gender" aria-label="select">
+        <option selected>성별</option>
+        <option value="1">남성</option>
+        <option value="2">여성</option>
+     </select>
+      <input type="text" class="text" placeholder="제품명을 입력해주세요">
+      <button type="button" class="btn btn-primary">조회</button>
+    </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="category">카테고리</th>
+            <th scope="col">브랜드</th>
+            <th scope="col">상품명</th>
+            <th scope="col">가격</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="category">상의</td>
+            <td class="brand">Supreme</td>
+            <td class="product">슈프림 박스로고 후드티</td>
+            <td class="price">390,000</td>
+          </tr>
+          <tr>
+            <td class="category">하의</td>
+            <td class="brand">DIESEL</td>
+            <td class="product">디젤 트랙 팬츠</td>
+            <td class="price">188,000</td>
+          </tr>
+          <tr>
+            <td class="category">신발</td>
+            <td class="brand">Nike</td>
+            <td class="product">에어포스1</td>
+            <td class="price">137,000</td>
+          </tr>
+          <tr>
+            <td class="category">패션잡화</td>
+            <td class="brand">Music&Goods</td>
+            <td class="product">땡땡이 키링</td>
+            <td class="price">29,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+       <div id="today" style="float: right;">
+        <div id="date" class="date">date</div>
+        <div id="time" class="time">time</div>
+       </div>
+       
+    <script>
+        // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+        // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+        const data = [
+            { category: "상의", brand: 'Supreme', product: '슈프림 박스로고 후드티', price: '390,000' },
+            { category: "하의", brand: 'DIESEL', product: '디젤 트랙 팬츠', price: '188,000' },
+            { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+            { category: "패션잡화", brand: 'Music&Goods', product: '빵빵이 키링', price: '29,000' },
+            // ...
+        ];
+        
+        const dataTable = document.getElementById('data-table');
+        
+        data.forEach((item) => {
+            const row = dataTable.insertRow();
+            row.insertCell(0).innerHTML = item.category;
+            row.insertCell(1).innerHTML = item.brand;
+            row.insertCell(2).innerHTML = item.product;
+            row.insertCell(3).innerHTML = item.price;
+        });
+
+        
+        
+
+  
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
